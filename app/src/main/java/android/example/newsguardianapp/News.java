@@ -36,6 +36,7 @@ public class News {
         mWebTitle = webTitle;
         mSectionName = sectionName;
         mPublicationDate = publicationDate;
+        mAuthor= author;
         mUrl = url;
     }
 

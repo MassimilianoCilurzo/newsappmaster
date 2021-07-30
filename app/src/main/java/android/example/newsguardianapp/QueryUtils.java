@@ -193,14 +193,14 @@ public final class QueryUtils {
                 String url = currentArticle.getString("webUrl");
                 String newsDate = currentArticle.getString("webPublicationDate");
                 JSONArray tagsArray = currentArticle.getJSONArray("tags");
-                if(tagsArray.length() > 0) {
-                    for(int j = 0; j < 1; j++) {
+                if(tagsArray!=null&&tagsArray.length() > 0) {
+
                         // extract the value for the key author
-                        JSONObject authorObj = tagsArray.getJSONObject(j);
+                        JSONObject authorObj = tagsArray.getJSONObject(0);
                         author = authorObj.getString("webTitle");
+
                 }
-                }
-                // Create a new {@link Earthquake} object with the magnitude, location, time,
+                // Create a new {@link News} object with title, section name, author, news date and url
                 // and url from the JSON response.
 
                 News article = new News(title, sectionName,author, newsDate, url);
